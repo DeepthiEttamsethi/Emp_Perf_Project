@@ -68,33 +68,36 @@ Set up the necessary database tables using the provided SQL commands in the Java
 
 ##### Manager Login:
 
-    CREATE TABLE MANAGER_LOGIN(USERNAME VARCHAR(30), PASSWORD VARCHAR(30));
+    CREATE TABLE MANAGER_LOGIN(USERNAME VARCHAR(255), PASSWORD VARCHAR(255));
     
 ##### Employee Login:
-
-    CREATE TABLE EMPLOYEE_LOGIN(USERNAME VARCHAR(30), PASSWORD VARCHAR(30));
-
+   
+    CREATE TABLE EMPLOYEE_LOGIN(Id INT PRIMARY KEY AUTO_INCREMENT, USERNAME VARCHAR(255), PASSWORD VARCHAR(255));
+    
 ##### Employee:
 
     CREATE TABLE Employee (
-    Id INT AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(50) NOT NULL,
-    Email VARCHAR(40) NOT NULL,
-    Gender VARCHAR(20) CHECK (Gender = 'Male' OR Gender = 'Female'),
-    Hiredate DATETIME NOT NULL,
-    Designation VARCHAR(40) NOT NULL,
-    Salary FLOAT NOT NULL,
-    Mobileno VARCHAR(15) NOT NULL);
+     Id INT AUTO_INCREMENT PRIMARY KEY,
+     Name VARCHAR(255) NOT NULL,
+     Email VARCHAR(255) NOT NULL,
+     Gender VARCHAR(255) CHECK (Gender = 'Male' OR Gender = 'Female'),
+     Hiredate DATETIME NOT NULL,
+     Designation VARCHAR(255) NOT NULL,
+     Salary FLOAT NOT NULL,
+     Mobileno bigint NOT NULL);
+
 
 ##### Evaluation:
+
     CREATE TABLE Evaluation (
-    Id INT AUTO_INCREMENT PRIMARY KEY,
-    Employee_Id INT,
-    EvaluationDate DATE,
-    Rating INT,
-    Feedback TEXT,
-    FOREIGN KEY (Employee_Id) REFERENCES Employee(Id)
-  );
+    Id INT  PRIMARY KEY,
+     EvaluationDate DATE,
+     Rating INT,
+     Feedback varchar(255),
+     FOREIGN KEY (Id) REFERENCES Employee(Id));
+
+
+
 #### Update Database Connection:
 Update the database connection details in the Java code to match your MySQL configuration:
 
