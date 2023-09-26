@@ -14,7 +14,7 @@
 
 ## Table Of Contents
 
-- [About the Project](#about-the-project)
+- [About the Performance  System](#about-the-project)
 - [Features](#features)
   - [User Authentication](#user-section)
   - [Manager Section](#manager-section)
