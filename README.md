@@ -58,7 +58,7 @@
 ](#evaluation-queries)
     - [Update Database Connection
 ](#update-details)
-    - [ Compile and Run:
+    - [ Compile and Run
 ](#compileandrun-details)
     - [Menu
 ](#menu-details)
